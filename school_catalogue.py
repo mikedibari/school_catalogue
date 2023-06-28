@@ -31,7 +31,18 @@ class PrimarySchool(School):
         # use super() to avoid repeating code
         parentRepr = super().__repr__()
         return parentRepr + f' The pickup policy is {self.pickupPolicy}.'
-    
+
+class HighSchool(School):
+    def __init__(self, name, numberOfStudents, sportsTeams):
+        super().__init__(name, "high", numberOfStudents)
+        self.sportsTeams = sportsTeams
+
+    def getSportsTeams(self):
+        return self.sportsTeams
+    # override to display sportsTeams
+    def __repr__(self):
+        parentRepr = super().__repr__()
+        return parentRepr + f' The sports teams are {self.sportsTeams}.' 
 
 a = School("Cambridge", "high", 300)
 print(a)
@@ -40,6 +51,10 @@ print(a.getLevel())
 a.setNumberOfStudents(400)
 print(a.getNumberOfStudents())
 
-b = PrimarySchool("Boston", 500, "'Pickup Allowed'")
+b = PrimarySchool("Boston Elementary", 500, "'Pickup Allowed'")
 print(b.getPickupPolicy())
 print(b)
+
+c = HighSchool("Medford High", 250, ["Football", "Baseball", "Lacrosse"])
+print(c.getSportsTeams())
+print(c)
