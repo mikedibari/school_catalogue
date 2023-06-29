@@ -45,16 +45,16 @@ class HighSchool(School):
         return parentRepr + f' The sports teams are {self.sportsTeams}.' 
 
 a = School("Cambridge", "high", 300)
-print(a)
-print(a.getName())
-print(a.getLevel())
-a.setNumberOfStudents(400)
-print(a.getNumberOfStudents())
+print(a) # A high school named Cambridge with 300 students.
+print(a.getName()) # Cambridge
+print(a.getLevel()) # high
+a.setNumberOfStudents(400) # calls setter method
+print(a.getNumberOfStudents()) # 400
 
 b = PrimarySchool("Boston Elementary", 500, "'Pickup Allowed'")
-print(b.getPickupPolicy())
-print(b)
+print(b.getPickupPolicy()) # 'Pickup Allowed'
+print(b) # A primary school named Boston Elementary with 500 students. The pickup policy is 'Pickup Allowed'.
 
 c = HighSchool("Medford High", 250, ["Football", "Baseball", "Lacrosse"])
-print(c.getSportsTeams())
-print(c)
+print(c.getSportsTeams()) # ['Football', 'Baseball', 'Lacrosse']
+print(c) # A high school named Medford High with 250 students. The sports teams are ['Football', 'Baseball', 'Lacrosse'].
